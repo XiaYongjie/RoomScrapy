@@ -1,0 +1,25 @@
+蘑菇租房接口:
+    https://api.mgzf.com/mogoroom-find/v2/find/getRoomListByCriteria   //房屋列表
+
+    https://api.mgzf.com/mogoroom-find/v2/find/roomDetail/basicInfo   // 房屋基本信息 
+    参数：  
+        roomId：房屋信息
+        sourceType： 来源类型 （1代表手机端）
+        source：  房屋来源 （选填）
+
+    https://api.mgzf.com/mogoroom-find/v2/find/roomDetail/ownerPlatformEnsureInfo    // 房屋联系人信息 
+    参数：  
+        roomId：房屋信息
+        sourceType： 来源类型 （1代表手机端）
+        brokerId：  联系人Id 
+
+    https://api.mgzf.com/mogoroom-find/v2/find/roomDetail/subwayLocation   // 房屋位置信息 
+    参数：  
+        roomId：房屋信息
+        sourceType： 来源类型 （1代表手机端）
+
+
+    https://api.mgzf.com/mogoroom-find/v2/find/roomDetail/roomConfigs   // 房屋配置信息 
+    参数：  
+        roomId：房屋信息
+        sourceType： 来源类型 （1代表手机端）
