@@ -37,7 +37,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -64,6 +64,10 @@ COOKIES_ENABLED = False
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
 #    'tutorial.middlewares.TutorialDownloaderMiddleware': 543,
+#    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware':123,
+#    'tutorial.middlewares.IPPOOlS' : 125,
+#    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': 2,
+#    'tutorial.uamid.Uamid': 1
 #}
 
 # Enable or disable extensions
@@ -98,3 +102,20 @@ COOKIES_ENABLED = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# 设置IP池
+IPPOOL = [{"ipaddr": "202.199.159.130:40670"},
+          {"ipaddr": "113.200.214.164:9999"},
+          {"ipaddr": "101.231.50.154:8000"},
+          {"ipaddr": "101.132.122.230:3128"},
+          {"ipaddr": "101.37.79.125:3128"},
+          {"ipaddr": "101.236.32.119:3128"},
+          {"ipaddr": "120.92.74.237:3128"},
+          {"ipaddr": "218.60.8.99:3129"},
+          {"ipaddr": "183.47.40.35:8088"},
+          {"ipaddr": "218.60.8.98:3129"},
+          {"ipaddr": "114.216.161.72:9999"},
+          {"ipaddr": "113.200.56.13:8010"},
+          {"ipaddr": "203.86.26.9:3128"}
+          ]
+ # 设置用户代理池
+UPPOOL = ["Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393"]

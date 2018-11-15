@@ -8,6 +8,22 @@
 from scrapy import signals
 
 
+# 导入随机模块
+import random
+# 导入settings文件中的IPPOOL
+from .settings import IPPOOL
+# 导入官方文档对应的HttpProxyMiddleware
+from scrapy.contrib.downloadermiddleware.httpproxy import HttpProxyMiddleware
+
+
+class IPPOOlS(HttpProxyMiddleware):
+    def __init__(self, ip=''):
+        self.ip = ip
+    def process_request(self, request, spider):
+        thisip = random.choice(IPPOOL)
+        print("当前使用IP是："+ thisip["ipaddr"])
+        request.meta["proxy"] = "http://"+thisip["ipaddr"]
+
 class TutorialSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
@@ -101,3 +117,5 @@ class TutorialDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
