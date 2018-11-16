@@ -154,8 +154,8 @@ class TutorialSpide(scrapy.Spider):
         try:
             cursor.execute(sql,('蘑菇租房','上海',room['area'],room['lat'],room['lng'],room['community'],room['decoration'],room['phone'],room['pic_list'],room['price'],room['price_method'],room['address_dec'],room['woner'],room['subwayLocation'],room['subway'],room['room_url'],room['deposit'],room['service_free'],room['title'],room['rent_type'],room['floor'],room['address']))
             db.commit()
-        except:
-            print(e)
+        except  : 
+            print()
             print("---------------------插入失败------------------------")
             db.rollback()
         db.close()
